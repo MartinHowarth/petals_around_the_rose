@@ -52,14 +52,14 @@ fn count_petals(dice: Vec<i32>) -> i32 {
     counter
 }
 
-fn add_0(num: &mut i32) {
-    *num = *num;
+fn add_0(_: &mut i32) {
+    ;
 }
 
 fn add_2(num: &mut i32) {
-    *num = *num + 2;
+    *num += 2;
 }
 
 fn add_4(num: &mut i32) {
-    *num = *num + 4;
+    *num += 4;
 }
