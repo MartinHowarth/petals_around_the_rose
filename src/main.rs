@@ -42,24 +42,24 @@ fn roll_dice() -> i32 {
 fn count_petals(dice: Vec<i32>) -> i32 {
     let mut counter = 0;
     for die in dice {
-        let mut f: fn(i32) -> i32 = match die {
+        let mut f: fn(&mut i32) = match die {
             3 => add_2,
             5 => add_4,
             _ => add_0,
         };
-        counter = f(counter)
+        f(&mut counter);
     }
     counter
 }
 
-fn add_0(num: i32) -> i32 {
-    num
+fn add_0(num: &mut i32) {
+    *num = *num;
 }
 
-fn add_2(num: i32) -> i32 {
-    num + 2
+fn add_2(num: &mut i32) {
+    *num = *num + 2;
 }
 
-fn add_4(num: i32) -> i32 {
-    num + 4
+fn add_4(num: &mut i32) {
+    *num = *num + 4;
 }
