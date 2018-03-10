@@ -36,7 +36,7 @@ fn play_game() {
 }
 
 fn roll_dice() -> i32 {
-    return rand::thread_rng().gen_range(1, 7);
+    rand::thread_rng().gen_range(1, 7)
 }
 
 fn count_petals(dice: Vec<i32>) -> i32 {
@@ -52,5 +52,5 @@ fn count_petals(dice: Vec<i32>) -> i32 {
             _ => {;},
         };
     }
-    return counter;
+    counter
 }
